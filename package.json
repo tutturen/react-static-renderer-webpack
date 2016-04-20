@@ -1,10 +1,19 @@
 {
   "name": "react-static-renderer-webpack",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Webpack-plugin for generating static html assets",
   "main": "dist/index.js",
   "scripts": {
-    "test": "eslint src && mocha --compilers js:babel-register"
+    "test": "eslint src && mocha --compilers js:babel-register",
+    "watch": "babel -w -d dist src",
+    "clean": "rimraf dist",
+    "build": "mkdir -p dist && npm run clean && babel -d dist src",
+    "bump:patch": "npm version patch -m \"v%s\"",
+    "bump:minor": "npm version minor -m \"v%s\"",
+    "bump": "npm run bump:patch",
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -39,6 +48,7 @@
     "eslint-config-airbnb": "^7.0.0",
     "eslint-plugin-jsx-a11y": "^0.6.2",
     "eslint-plugin-react": "^4.3.0",
-    "expect": "^1.18.0"
+    "expect": "^1.18.0",
+    "rimraf": "^2.5.2"
   }
 }
