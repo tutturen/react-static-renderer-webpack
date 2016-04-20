@@ -1,7 +1,7 @@
 # React Static Renderer
 A webpack plugin that lets you render a html file for each js-bundle you got
 
-This package is heavily inspired by Ian Sinnot's talk ["Building Static Sites with React"](https://www.youtube.com/watch?v=CPpM5-rXrZ4).
+This package is heavily inspired by Ian Sinnott's talk ["Building Static Sites with React"](https://www.youtube.com/watch?v=CPpM5-rXrZ4).
 He has also made a [very useful webpack-plugin](https://github.com/iansinnott/react-static-webpack-plugin/) for building static sites with React Router.
 This package is not coupled with React Router, and instead seeks to build independent html files for every js-bundle you have.
 
@@ -45,7 +45,7 @@ module.exports = {
         favicon: '/favicon.png',
         title: 'Awesome App',
         render: template.render,
-        stylesheet: 'default.css',
+        stylesheet: '/default.css',
       },
     }),
   ],
