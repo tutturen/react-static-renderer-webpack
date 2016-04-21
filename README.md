@@ -57,14 +57,14 @@ module.exports = {
 // src/todo.js
 import React from 'react';
 import { render } from 'react-dom';
-import App from './components/App.js';
+import Todo from './components/Todo.js';
 
 // Don't try to render unless we're in the browser
-if (typeof document !== 'undefined')
-  render(<App />, document.getElementById('root'));
-
+if (typeof document !== 'undefined') {
+  render(<Todo />, document.getElementById('root'));
+}
 // Be sure to export the React component so that it can be statically rendered
-export default App;
+export default Todo;
 ```
 
 You will need to implement a render function for your template.
@@ -90,6 +90,32 @@ export const render = ({ title, favicon, stylesheet, body, bundle }) => (`
 
 ```
 Now when you run `webpack` you will see `todo.html` in the output. Serve it statically and open it in any browser.
+
+## API
+
+The ReactStaticRenderer takes two arguments - sources and defaults.
+The sources represent each html-file you want to create from your bundles.
+The defaults are the fallback values for when something is not specified in a source.
+
+### bundle: string
+The full name of the js-bundle specified in "entry" in the webpack config.
+
+### title: string
+The title for the html document
+
+### favicon: string
+The favicon for the html document
+
+### stylesheet: string
+The full path of the stylesheet
+
+### render: function
+A function which should accept an options argument.
+The options argument should have the following properties: title, favicon, stylesheet, body, bundle
+The body is the html for your react component, and the rest is described above.
+
+### staticMarkup: boolean
+This simply decides if we use "renderToString" or "renderToStaticMarkup" when rendering our react component.
 
 ## License
 
