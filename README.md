@@ -101,17 +101,17 @@ The defaults are the fallback values for when something is not specified in a so
 The full name of the js-bundle specified in "entry" in the webpack config.
 
 ### title: string
-The title for the html document
+The title for the html document.
 
 ### favicon: string
-The favicon for the html document
+The favicon for the html document.
 
 ### stylesheet: string
-The full path of the stylesheet
+The full path of the stylesheet.
 
 ### render: function
 A function which should accept an options argument.
-The options argument should have the following properties: title, favicon, stylesheet, body, bundle
+The options argument should have the following properties: title, favicon, stylesheet, body and bundle.
 The body is the html for your react component, and the rest is described above.
 
 ### staticMarkup: boolean
