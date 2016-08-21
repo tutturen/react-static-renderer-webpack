@@ -13,7 +13,7 @@ export const formatSources = (sources, assets) => {
 };
 
 export const pickSingleAsset = (assets, source) => {
-  const asset = _.pick(assets, source.bundle)[source.bundle];
+  const asset = assets[source.bundle];
   return _.assign({}, { file: asset }, source);
 };
 
