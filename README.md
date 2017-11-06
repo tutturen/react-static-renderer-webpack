@@ -1,4 +1,7 @@
-# React Static Renderer
+# React Static Renderer [Deprecated]
+
+**Deprecation warning: There are other wonderful alternatives for static rendering in the React ecosystem. Use them instead.**
+
 A webpack plugin that lets you render a html file for each js-bundle you got
 
 This package is heavily inspired by Ian Sinnott's talk ["Building Static Sites with React"](https://www.youtube.com/watch?v=CPpM5-rXrZ4).
